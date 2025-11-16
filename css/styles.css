@@ -7,17 +7,16 @@
     --font-family-base: "Instrument Sans", system-ui, -apple-system, BlinkMacSystemFont,
                         "Segoe UI", sans-serif;
 
-    /* Spessori (puoi aggiungere altri se servono) */
+    /* Spessori */
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
 
-    /* Letter-spacing per gli header.
-       In Figma hai “-5%”: qui lo traduciamo in -0.05em. */
+    /* Letter-spacing per gli header */
     --heading-letter-spacing: -0.05em;
 
-    /* Palette colori (puoi raffinarla più avanti) */
+    /* Palette colori */
     --color-bg: #ffffff;
     --color-text: #111111;
     --color-muted: #666666;
@@ -26,7 +25,7 @@
     --color_EVOG: #8BBE96;
     --color_EVOB: #252525;
 
-    /* Dimensioni tipografiche principali (scalabili) */
+    /* Tipografia */
     --font-size-base: 16px;
     --font-size-sm: 0.875rem;
     --font-size-heading-sm: 1rem;
@@ -37,7 +36,7 @@
     /* Layout */
     --container-max-width: 1500px;
 
-    /* Scala di spaziatura */
+    /* Spaziatura */
     --space-2: 0.5rem;
     --space-3: 0.75rem;
     --space-4: 1rem;
@@ -47,16 +46,6 @@
     --space-12: 3rem;
     --space-16: 4rem;
 }
-
-/* Se vuoi caricare i file del font, potresti farlo così:
-@font-face {
-    font-family: "Instrument Sans";
-    src: url("../fonts/InstrumentSans-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-*/
-
 
 /* ===========================
    RESET BASE / GLOBAL
@@ -101,7 +90,6 @@ a:hover {
     padding-inline: clamp(1rem, 3vw, 8rem);
 }
 
-
 /* ===========================
    TIPOGRAFIA DI BASE
    =========================== */
@@ -126,7 +114,7 @@ a:hover {
     line-height: 1.05;
 }
 
-.heading--xl--sub{
+.heading--xl--sub {
     font-size: var(--font-size-heading-lg);
     line-height: 1.3;
     color: var(--color_EVOG);
@@ -149,7 +137,6 @@ a:hover {
     color: var(--color-muted);
 }
 
-
 /* ===========================
    UTILITIES / GENERIC LAYOUT
    =========================== */
@@ -158,34 +145,23 @@ a:hover {
     padding-block: var(--space-10);
 }
 
-.site-header {
-    position: sticky;                /* “appiccica” l’header quando si arriva in alto */
-    top: 0;                          /* il punto in cui si ferma è il bordo superiore della viewport */
-    z-index: 20;                     /* sta sopra ai contenuti che scorrono sotto */
-    padding-block: var(--space-4);
-    background-color: var(--color-bg); /* importantissimo: sfondo opaco per non vedere roba dietro */
-    border-bottom: 1px solid var(--color_EVOG); /* ← linea sotto l’header */
-}
-
-.site-header__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .divider {
     border: 0;
     border-top: 1px solid var(--color-border);
     margin-block: var(--space-6);
 }
 
-
 /* ===========================
    HEADER
    =========================== */
 
 .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     padding-block: var(--space-4);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color_EVOG);
 }
 
 .site-header__inner {
@@ -215,33 +191,32 @@ a:hover {
    =========================== */
 
 .hero {
-    position: relative;                    /* serve per lo sfondo ::before */
-    padding-block: var(--space-12);        /* spazio sopra/sotto il testo */
-    min-height: 70vh;                      /* altezza minima della sezione */
-    /* puoi provare anche 60vh / 80vh */
+    position: relative;
+    padding-block: var(--space-12);
+    min-height: 70vh;          /* controlla l'altezza minima della hero */
     display: flex;
-    align-items: center;                   /* centra verticalmente il contenuto */
-    overflow: hidden;                      /* taglia l'immagine che "sbroda" fuori */
+    align-items: center;        /* centra verticalmente il contenuto */
+    overflow: hidden;           /* taglia l'immagine in eccesso */
 }
 
 .hero::before {
     content: "";
     position: absolute;
-    inset: 0;                                /* top:0; right:0; bottom:0; left:0 */
+    inset: 0;
     background-image: url("../assets/hero-image.png");
-    background-size: cover;                  /* riempi la sezione, ritagliando se serve */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.25;                           /* quanto deve essere visibile l'immagine */
-    z-index: 0;                              /* sta sotto al contenuto */
+    opacity: 0.25;
+    z-index: 0;
 }
 
 .hero__inner {
     width: 100%;
     max-width: 72rem;
     margin: 0 auto;
-    position: relative;   /* sta sopra allo sfondo */
-    z-index: 1;
+    position: relative;
+    z-index: 1; /* sopra lo sfondo */
 }
 
 .hero__content {
@@ -249,6 +224,7 @@ a:hover {
     text-align: left;
 }
 
+/* (facoltativi, per quando vorrai rimettere un'immagine dentro la hero)
 .hero__image-wrapper {
     margin-top: var(--space-8);
 }
@@ -261,7 +237,7 @@ a:hover {
     border-radius: 12px;
     object-fit: cover;
 }
-
+*/
 
 /* ===========================
    WORK SECTION / PROJECTS GRID
@@ -278,14 +254,23 @@ a:hover {
     margin-top: 2rem;
 }
 
-/* Card base */
+/* Card base + hover */
 .project-card {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
     background-color: #ffffff;
-    border-radius: 12px;      /* ← arrotonda i bordi della card */
-    overflow: hidden;         /* ← fa sì che anche l’immagine segua gli angoli tondi */
+    border-radius: 12px;
+    overflow: hidden;
+    transform: translateY(0);
+    transition:
+        transform 0.2s ease-out,
+        box-shadow 0.2s ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* Variante con testo descrittivo */
@@ -295,7 +280,7 @@ a:hover {
 
 /* Media (immagine o cover) */
 .project-card__media {
-    background-color: #f5f5f5; /* fallback neutro se manca l'immagine */
+    background-color: #f5f5f5;
     aspect-ratio: 4 / 3;
     overflow: hidden;
 }
@@ -332,7 +317,6 @@ a:hover {
     font-size: var(--font-size-sm);
 }
 
-
 /* ===========================
    STATS SECTION
    =========================== */
@@ -356,8 +340,8 @@ a:hover {
 
 .stat {
     padding-top: var(--space-6);
-    border-bottom: 1px solid var(--color-border);
     padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .stat__value {
@@ -367,7 +351,6 @@ a:hover {
 .stat__label {
     max-width: 22rem;
 }
-
 
 /* ===========================
    CONTACT / FOOTER ALTO
@@ -412,7 +395,6 @@ a:hover {
     margin-bottom: var(--space-2);
 }
 
-
 /* ===========================
    FOOTER FINALE
    =========================== */
@@ -429,11 +411,11 @@ a:hover {
 .footer-wordmark {
     display: block;
 }
+
 /* ===========================
    SCROLL ANIMATIONS
    =========================== */
 
-/* stato iniziale: fuori scena a destra e trasparente */
 .reveal-right {
     opacity: 0;
     transform: translateX(40px);
@@ -442,27 +424,9 @@ a:hover {
         transform 0.6s ease-out;
 }
 
-/* quando l'elemento entra in viewport */
 .reveal-right.is-visible {
     opacity: 1;
     transform: translateX(0);
-}
-/* ===========================
-   CARD HOVER EFFECT
-   =========================== */
-
-/* stato "normale" */
-.project-card {
-    background-color: #ffffff;             /* sfondo bianco per far vedere l'ombra */
-    transform: translateY(0);
-    transition:
-        transform 0.2s ease-out,
-        box-shadow 0.2s ease-out;
-}
-/* quando il mouse passa sopra */
-.project-card:hover {
-    transform: translateY(-4px);           /* le fa “alzare” un pochino */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* ===========================
@@ -492,6 +456,10 @@ a:hover {
         padding-inline: clamp(1rem, 5vw, 1.5rem);
     }
 
+    .section {
+        padding-block: var(--space-8);
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -502,6 +470,7 @@ a:hover {
 
     .hero {
         padding-block: var(--space-8);
+        min-height: 60vh; /* un po' meno alta su mobile */
     }
 
     .heading--xl {
@@ -514,6 +483,6 @@ a:hover {
     }
 
     .main-nav {
-        display: none; /* semplificato: potrai poi fare un menu mobile */
+        display: none; /* menu mobile da fare in futuro */
     }
 }
