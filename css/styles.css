@@ -1,219 +1,502 @@
-<!-- Rende il layout responsive sugli schermi piccoli -->
-    
-    <!--font google-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <!-- Colleghiamo il file di stile esterno: tutte le regole CSS stanno lì -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <script src="js/scroll-animations.js" defer></script>
+/* ===========================
+   TOKENS / VARIABILI DI STILE
+   =========================== */
 
-    <!--
-        Wrapper generale della pagina.
-        Serve soprattutto per dare un max-width centrato (gestito via CSS).
-    -->
-    <div class="page">
+:root {
+    /* Font family base */
+    --font-family-base: "Instrument Sans", system-ui, -apple-system, BlinkMacSystemFont,
+                        "Segoe UI", sans-serif;
 
-        <!-- HEADER: logo piccolo + eventuale nav futura -->
-        <header class="site-header">
-            <div class="site-header__inner">
-                <!--
-                    Logo wordmark (testo F&F o logotipo).
-                    L'SVG lo inserirai tu in /assets/logo-wordmark.svg
-                -->
-                <a href="#" class="brand">
-                    <img src="assets/logo_small_col.svg" alt="Evolvente Lab" class="brand__mark">
-                </a>
+    /* Spessori (puoi aggiungere altri se servono) */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 
-                <!-- Nav vuota per ora, ma già pronta per link tipo “Work / About / Contact” -->
-                <nav class="main-nav">
-                    <!-- esempio placeholder -->
-                    <a href="#about" class="main-nav__link">About</a>
-                    <a href="#contact" class="main-nav__link">Contact</a>
-                </nav>
-            </div>
-        </header>
+    /* Letter-spacing per gli header.
+       In Figma hai “-5%”: qui lo traduciamo in -0.05em. */
+    --heading-letter-spacing: -0.05em;
 
-        <!-- HERO: blocco grande con headline e subheadline -->
-        <main>
-            <section class="hero" aria-labelledby="hero-title">
-                <div class="hero__inner">
-                    <!-- Titolo principale: usiamo una classe utility per heading grande -->
-                    <div class="hero__content">
-                    <h1 id="hero-title" class="heading heading--xl">
-                        Evolvente Lab
-                    </h1>
-                <h2 class="heading heading--xl--sub"> 
-                    Design. Build. Repeat.
-                </h2>
-                    <p class="hero__subtitle body-text">
-                        We build digital identities that are clear, bold and memorable.
-                    </p>
-                    </div>
-                     <!-- Immagine hero -->
-    <div class="hero__image-wrapper">
-      <img
-        src="assets/hero-image.png"
-        alt="Mockup progetti Evolvente Lab"
-        class="hero__image"
-      >
-    </div>
-                </div>
-            </section>
+    /* Palette colori (puoi raffinarla più avanti) */
+    --color-bg: #ffffff;
+    --color-text: #111111;
+    --color-muted: #666666;
+    --color-border: #e5e5e5;
+    --color-link: #111111;
+    --color_EVOG: #8BBE96;
+    --color_EVOB: #252525;
 
-            <!-- Divider orizzontale sottile -->
-            <hr class="divider">
+    /* Dimensioni tipografiche principali (scalabili) */
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-heading-sm: 1rem;
+    --font-size-heading-lg: 2.5rem;
+    --font-size-heading-xl: 3.5rem;
+    --font-size-heading-footer: clamp(3rem, 9vw, 12rem);
 
-            <!-- SEZIONE: Our work -->
-            <section id="work" class="section section--work" aria-labelledby="work-title">
-                <div class="section__header">
-                    <h2 id="work-title" class="heading heading--sm">I nostri servizi</h2>
-                </div>
+    /* Layout */
+    --container-max-width: 1500px;
 
-                <!-- Griglia dei progetti: tre colonne sul desktop, layout a card -->
-                <div class="projects-grid">
+    /* Scala di spaziatura */
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+}
 
-                    <!-- CARD PROGETTO 1 -->
-                    <article class="project-card">
-                        <div class="project-card__media">
-                            <!-- Placeholder progetto: metterai un tuo SVG o immagine -->
-                            <img src="assets/p_1.png" alt="Progetto_1" loading="lazy">
-                        </div>
+/* Se vuoi caricare i file del font, potresti farlo così:
+@font-face {
+    font-family: "Instrument Sans";
+    src: url("../fonts/InstrumentSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+*/
 
-                        <div class="project-card__meta">
-                            <p class="project-card__label">Project</p>
-                            <p class="project-card__name">Teglia Coni</p>
-                            <p class="project-card__category body-text--muted">
-                                Progetto per mantenere coni in lavorazione
-                            </p>
-                        </div>
-                    </article>
 
-                     <!-- CARD PROGETTO 2 -->
-                    <article class="project-card">
-                        <div class="project-card__media">
-                            <!-- Placeholder progetto: metterai un tuo SVG o immagine -->
-                            <img src="assets/p_1.png" alt="Progetto_2" loading="lazy">
-                        </div>
+/* ===========================
+   RESET BASE / GLOBAL
+   =========================== */
 
-                        <div class="project-card__meta">
-                            <p class="project-card__label">Project</p>
-                            <p class="project-card__name">Vomere</p>
-                            <p class="project-card__category body-text--muted">
-                                Progetto per mantenere coni in lavorazione
-                            </p>
-                        </div>
-                    </article>
-                    
-                    <!-- CARD PROGETTO 3: con testo descrittivo a destra -->
-                    <article class="project-card project-card--text">
-                        <div class="project-card__media">
-                            <img src="assets/p_3.png" alt="Progetto_3" loading="lazy">
-                        </div>
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-                        <div class="project-card__content">
-                            <p class="body-text">
-                                Ci occupiamo di progettazione di siti web per dare fastidio a Vincenzo PESCE
-                            </p>
-                            <a href="#" class="project-card__link">Ti piace così? →</a>
-                        </div>
-                    </article>
+html {
+    font-size: 100%;
+}
 
-                    <!--
-                        Altri progetti...
-                        Puoi continuare a clonare <article class="project-card"> cambiando solo testi e src delle immagini.
-                    -->
-                </div>
-            </section>
+body {
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
 
-            <!-- SEZIONE: Stats + copy (quella “1M+ / 36 / 100+”) -->
-            <section id="about" class="section section--stats" aria-label="Studio metrics">
-                <div class="section__inner section--stats__inner">
-                    <!-- Copy a sinistra -->
-                    <div class="section--stats__intro">
-                        <p class="body-text">
-                            Evolvente Lab craft<br>
-                            visual strategies that<br>
-                            elevate your brand.
-                        </p>
-                    </div>
+img {
+    display: block;
+    max-width: 100%;
+}
 
-                    <!-- Colonna numeri a destra -->
-                    <div class="stats-grid">
-                        <div class="stat reveal-right">
-                            <p class="stat__value heading heading--lg">1M+</p>
-                            <p class="stat__label body-text--muted">
-                                Users reached across all client websites
-                            </p>
-                        </div>
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
 
-                        <div class="stat reveal-right">
-                            <p class="stat__value heading heading--lg">36</p>
-                            <p class="stat__label body-text--muted">
-                                Active campaigns for multiple companies and brands
-                            </p>
-                        </div>
+a:hover {
+    text-decoration: underline;
+}
 
-                        <div class="stat reveal-right">
-                            <p class="stat__value heading heading--lg">100+</p>
-                            <p class="stat__label body-text--muted">
-                                Different clients have sought our expertise
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+.page {
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 3vw, 8rem);
+}
 
-            <!-- SEZIONE: Contact / footer alto -->
-            <section id="contact" class="section section--contact" aria-labelledby="contact-title">
-                <div class="section__header">
-                    <h2 id="contact-title" class="heading heading--sm">
-                        Connect with us to explore your project's potential.
-                    </h2>
-                </div>
 
-                <hr class="divider">
+/* ===========================
+   TIPOGRAFIA DI BASE
+   =========================== */
 
-                <div class="contact-grid">
-                    <!-- Icone del marchio -->
-                    <div class="contact-grid__col contact-grid__col--logo">
-                        <!-- Qui puoi mettere due simboli SVG, come nel layout Figma -->
-                        <img src="assets/logo_claim_col.svg" alt="EvolventeLab" class="contact-logo">
-                    </div>
+.heading {
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--heading-letter-spacing);
+    margin: 0;
+}
 
-                    <!-- Dati ufficio -->
-                    <div class="contact-grid__col">
-                        <h3 class="contact-heading">Sede legale</h3>
-                        <p class="body-text">
-                            Via Rovereto, 5<br>
-                            81050 Portico Di Caserta (CE), Italia
-                        </p>
+.heading--sm {
+    font-size: var(--font-size-heading-sm);
+    text-transform: none;
+}
 
-                        <h3 class="contact-heading">Contact</h3>
-                        <p class="body-text">
-                            evolventelab.com<br>
-                            info@evolventelab.com
-                        </p>
-                    </div>
+.heading--lg {
+    font-size: var(--font-size-heading-lg);
+}
 
-                    <!-- Social -->
-                    <div class="contact-grid__col">
-                        <h3 class="contact-heading">Social</h3>
-                        <ul class="social-list">
-                            <li><a href="#" class="social-list__link">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
+.heading--xl {
+    font-size: var(--font-size-heading-xl);
+    line-height: 1.05;
+}
 
-        <!-- FOOTER: logotipo grande in fondo pagina -->
-        <footer class="site-footer">
-            <div class="site-footer__inner">
-                <span class="footer-wordmark heading heading--footer">
-                    EVOLVENTELAB
-                </span>
-            </div>
-        </footer>
-    </div>
+.heading--xl--sub{
+    font-size: var(--font-size-heading-lg);
+    line-height: 1.3;
+    color: var(--color_EVOG);
+}
+
+.heading--footer {
+    font-size: var(--font-size-heading-footer);
+    line-height: 1;
+}
+
+.body-text {
+    margin: 0;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+}
+
+.body-text--muted {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-muted);
+}
+
+
+/* ===========================
+   UTILITIES / GENERIC LAYOUT
+   =========================== */
+
+.section {
+    padding-block: var(--space-10);
+}
+
+.site-header {
+    position: sticky;                /* “appiccica” l’header quando si arriva in alto */
+    top: 0;                          /* il punto in cui si ferma è il bordo superiore della viewport */
+    z-index: 20;                     /* sta sopra ai contenuti che scorrono sotto */
+    padding-block: var(--space-4);
+    background-color: var(--color-bg); /* importantissimo: sfondo opaco per non vedere roba dietro */
+    border-bottom: 1px solid var(--color_EVOG); /* ← linea sotto l’header */
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin-block: var(--space-6);
+}
+
+
+/* ===========================
+   HEADER
+   =========================== */
+
+.site-header {
+    padding-block: var(--space-4);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand__mark {
+    height: 24px;
+    width: auto;
+}
+
+.main-nav {
+    display: flex;
+    gap: var(--space-4);
+    font-size: var(--font-size-sm);
+}
+
+.main-nav__link {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+
+.hero {
+    padding-block: var(--space-2);  /* spazio sopra e sotto il contenuto */
+    min-height: 40vh;                /* altezza minima, così è importante ma non esagerata */
+    display: flex;
+    align-items: center;
+}
+
+.hero__inner {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.hero__content {
+    max-width: 32rem;
+    text-align: left;
+}
+
+.hero__image-wrapper {
+    margin-top: var(--space-8);
+}
+
+.hero__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+/* ===========================
+   WORK SECTION / PROJECTS GRID
+   =========================== */
+
+.section--work {
+    padding-bottom: var(--space-12);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+    margin-top: 2rem;
+}
+
+/* Card base */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    background-color: #ffffff;
+    border-radius: 12px;      /* ← arrotonda i bordi della card */
+    overflow: hidden;         /* ← fa sì che anche l’immagine segua gli angoli tondi */
+}
+
+/* Variante con testo descrittivo */
+.project-card--text {
+    justify-content: space-between;
+}
+
+/* Media (immagine o cover) */
+.project-card__media {
+    background-color: #f5f5f5; /* fallback neutro se manca l'immagine */
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+/* Metadati sotto l’immagine */
+.project-card__meta {
+    font-size: var(--font-size-sm);
+}
+
+.project-card__label {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+}
+
+.project-card__name {
+    margin: var(--space-2) 0 0;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.project-card__category {
+    margin-top: var(--space-1);
+}
+
+.project-card__content {
+    font-size: var(--font-size-sm);
+}
+
+.project-card__link {
+    display: inline-block;
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+}
+
+
+/* ===========================
+   STATS SECTION
+   =========================== */
+
+.section--stats__inner {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: var(--space-12);
+}
+
+.section--stats__intro {
+    max-width: 18rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: var(--space-8);
+    border-top: 1px solid var(--color-border);
+}
+
+.stat {
+    padding-top: var(--space-6);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-6);
+}
+
+.stat__value {
+    margin-bottom: var(--space-2);
+}
+
+.stat__label {
+    max-width: 22rem;
+}
+
+
+/* ===========================
+   CONTACT / FOOTER ALTO
+   =========================== */
+
+.section--contact {
+    padding-block: var(--space-10);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.2fr;
+    gap: var(--space-12);
+    padding-top: var(--space-6);
+}
+
+.contact-grid__col--logo {
+    align-self: flex-start;
+}
+
+.contact-logo {
+    height: 40px;
+    width: auto;
+}
+
+.contact-heading {
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0;
+}
+
+.social-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-list__link {
+    display: block;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2);
+}
+
+
+/* ===========================
+   FOOTER FINALE
+   =========================== */
+
+.site-footer {
+    padding-block: var(--space-12);
+}
+
+.site-footer__inner {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-6);
+}
+
+.footer-wordmark {
+    display: block;
+}
+/* ===========================
+   SCROLL ANIMATIONS
+   =========================== */
+
+/* stato iniziale: fuori scena a destra e trasparente */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+/* quando l'elemento entra in viewport */
+.reveal-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* ===========================
+   CARD HOVER EFFECT
+   =========================== */
+
+/* stato "normale" */
+.project-card {
+    background-color: #ffffff;             /* sfondo bianco per far vedere l'ombra */
+    transform: translateY(0);
+    transition:
+        transform 0.2s ease-out,
+        box-shadow 0.2s ease-out;
+}
+/* quando il mouse passa sopra */
+.project-card:hover {
+    transform: translateY(-4px);           /* le fa “alzare” un pochino */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section--stats__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-wordmark {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding-inline: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-block: var(--space-8);
+    }
+
+    .heading--xl {
+        font-size: 2.4rem;
+    }
+
+    .site-header__inner {
+        flex-direction: row;
+        gap: var(--space-4);
+    }
+
+    .main-nav {
+        display: none; /* semplificato: potrai poi fare un menu mobile */
+    }
+}
