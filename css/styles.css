@@ -381,30 +381,6 @@ a:hover {
 .footer-wordmark {
     display: block;
 }
-
-
-/* ===========================
-   RESPONSIVE
-   =========================== */
-
-@media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .section--stats__inner {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-wordmark {
-        font-size: 2.4rem;
-    }
-}
-
 /* ===========================
    SCROLL ANIMATIONS
    =========================== */
@@ -428,8 +404,7 @@ a:hover {
    =========================== */
 
 /* stato "normale" */
-.project-card,
-.stat {
+.project-card {
     background-color: #ffffff;             /* sfondo bianco per far vedere l'ombra */
     transform: translateY(0);
     transition:
@@ -437,11 +412,33 @@ a:hover {
         box-shadow 0.2s ease-out;
 }
 /* quando il mouse passa sopra */
-.project-card:hover,
-.stat:hover {
+.project-card:hover {
     transform: translateY(-4px);           /* le fa “alzare” un pochino */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section--stats__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-wordmark {
+        font-size: 2.4rem;
+    }
+}
+
 @media (max-width: 600px) {
     .page {
         padding-inline: var(--space-3);
