@@ -30,7 +30,7 @@
     --font-size-heading-sm: 1rem;
     --font-size-heading-lg: 2.5rem;
     --font-size-heading-xl: 3.5rem;
-    --font-size-heading-footer: clamp(3rem, 20vw, 12rem);
+    --font-size-heading-footer: clamp(3rem, 10vw, 12rem);
 
     /* Layout */
     --container-max-width: 1120px;
