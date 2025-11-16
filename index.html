@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frame & Form – Studio</title>
+
+    <!-- Rende il layout responsive sugli schermi piccoli -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Colleghiamo il file di stile esterno: tutte le regole CSS stanno lì -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--
+        Wrapper generale della pagina.
+        Serve soprattutto per dare un max-width centrato (gestito via CSS).
+    -->
+    <div class="page">
+
+        <!-- HEADER: logo piccolo + eventuale nav futura -->
+        <header class="site-header">
+            <div class="site-header__inner">
+                <!--
+                    Logo wordmark (testo F&F o logotipo).
+                    L'SVG lo inserirai tu in /assets/logo-wordmark.svg
+                -->
+                <a href="#" class="brand">
+                    <img src="assets/logo-wordmark.svg" alt="Frame & Form" class="brand__mark">
+                </a>
+
+                <!-- Nav vuota per ora, ma già pronta per link tipo “Work / About / Contact” -->
+                <nav class="main-nav">
+                    <!-- esempio placeholder -->
+                    <a href="#work" class="main-nav__link">Work</a>
+                    <a href="#about" class="main-nav__link">About</a>
+                    <a href="#contact" class="main-nav__link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- HERO: blocco grande con headline e subheadline -->
+        <main>
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero__inner">
+
+                    <!-- Titolo principale: usiamo una classe utility per heading grande -->
+                    <h1 id="hero-title" class="heading heading--xl">
+                        Frame &amp; Form specialize in<br>
+                        crafting the visual language<br>
+                        of your digital brand.
+                    </h1>
+
+                    <!-- Se vuoi, qui puoi aggiungere un micro-paragrafo o un bottone -->
+                    <!--
+                    <p class="hero__subtitle body-text">
+                        We build digital identities that are clear, bold and memorable.
+                    </p>
+                    -->
+                </div>
+            </section>
+
+            <!-- Divider orizzontale sottile -->
+            <hr class="divider">
+
+            <!-- SEZIONE: Our work -->
+            <section id="work" class="section section--work" aria-labelledby="work-title">
+                <div class="section__header">
+                    <h2 id="work-title" class="heading heading--sm">Our work</h2>
+                </div>
+
+                <!-- Griglia dei progetti: tre colonne sul desktop, layout a card -->
+                <div class="projects-grid">
+
+                    <!-- CARD PROGETTO 1 -->
+                    <article class="project-card">
+                        <div class="project-card__media">
+                            <!-- Placeholder progetto: metterai un tuo SVG o immagine -->
+                            <img src="assets/projects/project-1.svg" alt="Project Redo" loading="lazy">
+                        </div>
+
+                        <div class="project-card__meta">
+                            <p class="project-card__label">Project</p>
+                            <p class="project-card__name">Redo</p>
+                            <p class="project-card__category body-text--muted">
+                                Digital Rebrand &amp; User Experience
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- CARD PROGETTO 2 -->
+                    <article class="project-card">
+                        <div class="project-card__media">
+                            <img src="assets/projects/project-2.svg" alt="Titan Energy identity" loading="lazy">
+                        </div>
+
+                        <div class="project-card__meta">
+                            <p class="project-card__label">Project</p>
+                            <p class="project-card__name">Titan Energy</p>
+                            <p class="project-card__category body-text--muted">
+                                Digital Rebrand &amp; User Experience
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- CARD PROGETTO 3: con testo descrittivo a destra -->
+                    <article class="project-card project-card--text">
+                        <div class="project-card__media">
+                            <img src="assets/projects/project-3.svg" alt="Titan Energy campaign" loading="lazy">
+                        </div>
+
+                        <div class="project-card__content">
+                            <p class="body-text">
+                                Our redesign of Redo’s digital presence
+                                focused on a minimal visual system, built on
+                                a modern typographic hierarchy and bold UX
+                                micro–interactions that support clear
+                                messaging and engagement throughout
+                                each touchpoint.
+                            </p>
+                            <a href="#" class="project-card__link">See Project →</a>
+                        </div>
+                    </article>
+
+                    <!--
+                        Altri progetti...
+                        Puoi continuare a clonare <article class="project-card"> cambiando solo testi e src delle immagini.
+                    -->
+                </div>
+            </section>
+
+            <!-- SEZIONE: Stats + copy (quella “1M+ / 36 / 100+”) -->
+            <section id="about" class="section section--stats" aria-label="Studio metrics">
+                <div class="section__inner section--stats__inner">
+                    <!-- Copy a sinistra -->
+                    <div class="section--stats__intro">
+                        <p class="body-text">
+                            Frame &amp; Form craft<br>
+                            visual strategies that<br>
+                            elevate your brand.
+                        </p>
+                    </div>
+
+                    <!-- Colonna numeri a destra -->
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <p class="stat__value heading heading--lg">1M+</p>
+                            <p class="stat__label body-text--muted">
+                                Users reached across all client websites
+                            </p>
+                        </div>
+
+                        <div class="stat">
+                            <p class="stat__value heading heading--lg">36</p>
+                            <p class="stat__label body-text--muted">
+                                Active campaigns for multiple companies and brands
+                            </p>
+                        </div>
+
+                        <div class="stat">
+                            <p class="stat__value heading heading--lg">100+</p>
+                            <p class="stat__label body-text--muted">
+                                Different clients have sought our expertise
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEZIONE: Contact / footer alto -->
+            <section id="contact" class="section section--contact" aria-labelledby="contact-title">
+                <div class="section__header">
+                    <h2 id="contact-title" class="heading heading--sm">
+                        Connect with us to explore your project's potential.
+                    </h2>
+                </div>
+
+                <hr class="divider">
+
+                <div class="contact-grid">
+                    <!-- Icone del marchio -->
+                    <div class="contact-grid__col contact-grid__col--logo">
+                        <!-- Qui puoi mettere due simboli SVG, come nel layout Figma -->
+                        <img src="assets/logo-mark.svg" alt="Frame & Form symbol" class="contact-logo">
+                    </div>
+
+                    <!-- Dati ufficio -->
+                    <div class="contact-grid__col">
+                        <h3 class="contact-heading">Office</h3>
+                        <p class="body-text">
+                            12 Candyland Lane<br>
+                            20190 San Francisco
+                        </p>
+
+                        <h3 class="contact-heading">Contact</h3>
+                        <p class="body-text">
+                            (845) 555–4567<br>
+                            hello@ffstudio.com
+                        </p>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="contact-grid__col">
+                        <h3 class="contact-heading">Social</h3>
+                        <ul class="social-list">
+                            <li><a href="#" class="social-list__link">Instagram</a></li>
+                            <li><a href="#" class="social-list__link">Behance</a></li>
+                            <li><a href="#" class="social-list__link">Spotify</a></li>
+                            <li><a href="#" class="social-list__link">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER: logotipo grande in fondo pagina -->
+        <footer class="site-footer">
+            <div class="site-footer__inner">
+                <span class="footer-wordmark heading heading--footer">
+                    Frame &amp; Form
+                </span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
