@@ -35,7 +35,7 @@
     --font-size-heading-footer: clamp(3rem, 9vw, 12rem);
 
     /* Layout */
-    --container-max-width: 1280px;
+    --container-max-width: 1500px;
 
     /* Scala di spaziatura */
     --space-2: 0.5rem;
