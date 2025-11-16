@@ -150,14 +150,18 @@ a:hover {
     padding-block: var(--space-10);
 }
 
-.section__header {
-    margin-bottom: var(--space-4);
+.site-header {
+    position: sticky;                /* “appiccica” l’header quando si arriva in alto */
+    top: 0;                          /* il punto in cui si ferma è il bordo superiore della viewport */
+    z-index: 20;                     /* sta sopra ai contenuti che scorrono sotto */
+    padding-block: var(--space-4);
+    background-color: var(--color-bg); /* importantissimo: sfondo opaco per non vedere roba dietro */
 }
 
-.section__inner {
+.site-header__inner {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-8);
+    align-items: center;
+    justify-content: space-between;
 }
 
 .divider {
