@@ -193,7 +193,7 @@ a:hover {
 .hero {
     position: relative;
     padding-block: var(--space-12);
-    /*min-height: 70vh;           controlla l'altezza minima della hero */
+    min-height: 40vh;           /*controlla l'altezza minima della hero */
     display: flex;
     align-items: center;        /* centra verticalmente il contenuto */
     overflow: hidden;           /* taglia l'immagine in eccesso */
