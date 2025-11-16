@@ -23,6 +23,8 @@
     --color-muted: #666666;
     --color-border: #e5e5e5;
     --color-link: #111111;
+    --color-EVOG: #8BBE96;
+    --color_EVOB: #252525;
 
     /* Dimensioni tipografiche principali (scalabili) */
     --font-size-base: 16px;
@@ -33,7 +35,7 @@
     --font-size-heading-footer: clamp(3rem, 9vw, 12rem);
 
     /* Layout */
-    --container-max-width: 1120px;
+    --container-max-width: 1280px;
 
     /* Scala di spaziatura */
     --space-2: 0.5rem;
@@ -96,7 +98,7 @@ a:hover {
 .page {
     max-width: var(--container-max-width);
     margin-inline: auto;
-    padding-inline: var(--space-4);
+    padding-inline: clamp(0.5rem, 10vw, 3rem);
 }
 
 
