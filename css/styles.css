@@ -31,7 +31,7 @@
     --font-size-sm: 0.875rem;
     --font-size-heading-sm: 1rem;
     --font-size-heading-lg: 2.5rem;
-    --font-size-heading-xl: 3.5rem;
+    --font-size-heading-xl: 5rem;
     --font-size-heading-footer: clamp(3rem, 9vw, 12rem);
 
     /* Layout */
@@ -124,6 +124,12 @@ a:hover {
 .heading--xl {
     font-size: var(--font-size-heading-xl);
     line-height: 1.05;
+}
+
+.heading--xl--sub{
+    font-size: var(--font-size-heading-lg);
+    line-height: 1.3;
+    color: var(--color_EVOG);
 }
 
 .heading--footer {
