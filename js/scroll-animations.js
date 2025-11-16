@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }, {
-    threshold: 0.2 // ~20% dell'elemento visibile = considerato "in view"
+    threshold: 0.8 // ~20% dell'elemento visibile = considerato "in view"
   });
 
   items.forEach(el => observer.observe(el));
