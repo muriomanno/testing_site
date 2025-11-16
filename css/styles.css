@@ -443,7 +443,7 @@ a:hover {
 
 @media (max-width: 600px) {
     .page {
-        padding-inline: var(--space-3);
+        padding-inline: clamp(1rem, 5vw, 1.5rem);
     }
 
     .projects-grid {
