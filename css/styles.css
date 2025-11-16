@@ -23,7 +23,7 @@
     --color-muted: #666666;
     --color-border: #e5e5e5;
     --color-link: #111111;
-    --color-EVOG: #8BBE96;
+    --color_EVOG: #8BBE96;
     --color_EVOB: #252525;
 
     /* Dimensioni tipografiche principali (scalabili) */
@@ -31,11 +31,11 @@
     --font-size-sm: 0.875rem;
     --font-size-heading-sm: 1rem;
     --font-size-heading-lg: 2.5rem;
-    --font-size-heading-xl: 5rem;
+    --font-size-heading-xl: 3.5rem;
     --font-size-heading-footer: clamp(3rem, 9vw, 12rem);
 
     /* Layout */
-    --container-max-width: 2000px;
+    --container-max-width: 1500px;
 
     /* Scala di spaziatura */
     --space-2: 0.5rem;
@@ -98,7 +98,7 @@ a:hover {
 .page {
     max-width: var(--container-max-width);
     margin-inline: auto;
-    padding-inline: clamp(1rem, 2vw, 10rem);
+    padding-inline: clamp(1rem, 3vw, 8rem);
 }
 
 
@@ -357,7 +357,7 @@ a:hover {
     font-size: var(--font-size-sm);
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    margin: 0 0 var(--space-2);
+    margin-bottom: 0;
 }
 
 .social-list {
