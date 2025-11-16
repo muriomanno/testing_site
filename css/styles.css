@@ -235,6 +235,9 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    background-color: #ffffff;
+    border-radius: 12px;      /* ← arrotonda i bordi della card */
+    overflow: hidden;         /* ← fa sì che anche l’immagine segua gli angoli tondi */
 }
 
 /* Variante con testo descrittivo */
