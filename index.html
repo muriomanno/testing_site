@@ -7,14 +7,6 @@
     <!-- Rende il layout responsive sugli schermi piccoli -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Font Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
-      rel="stylesheet"
-    >
-
     <!-- File di stile esterno -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -47,6 +39,7 @@
           <!-- Nav (About / Contact) -->
           <nav class="main-nav">
             <a href="#about" class="main-nav__link">About</a>
+			<a href="lavori.html" class="main-nav__link">Lavori</a>
             <a href="#contact" class="main-nav__link">Contact</a>
           </nav>
         </div>
@@ -58,21 +51,22 @@
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero__inner">
             <div class="hero__content">
-              <h1 id="hero-title" class="heading heading--xl">
-                Evolvente Lab
-              </h1>
               <h2 class="heading heading--xl--sub">
                 Design. Build. Repeat.
               </h2>
+              <h1 id="hero-title" class="heading heading--xl">
+                Evolvente Lab
+              </h1>
               <p class="hero__subtitle body-text">
-                We build digital identities that are clear, bold and memorable.
-              </p>
+                  Soluzioni di ingegneria, prototipazione e consulenza<br>
+					per trasformare le tue idee in prodotti reali.
+              </p> 
             </div>
           </div>
         </section>
 
         <!-- Divider orizzontale sottile -->
-        <hr class="divider">
+        <hr class="divider-img">
 
         <!-- SEZIONE: Our work / servizi -->
         <section id="work" class="section section--work" aria-labelledby="work-title">
@@ -90,16 +84,16 @@
               <div class="project-card__media">
                 <img
                   src="assets/p_1.png"
-                  alt="Progetto 1 - Teglia Coni"
+                  alt="Corsi di formazione"
                   loading="lazy"
                 >
               </div>
 
               <div class="project-card__meta">
-                <p class="project-card__label">Project</p>
-                <p class="project-card__name">Teglia Coni</p>
+                <p class="project-card__label">Categoria</p>
+                <p class="project-card__name">Corsi di formazione</p>
                 <p class="project-card__category body-text--muted">
-                  Progetto per mantenere coni in lavorazione
+                  Corsi di formazione tecnica alle aziende
                 </p>
               </div>
             </article>
@@ -109,40 +103,63 @@
               <div class="project-card__media">
                 <img
                   src="assets/p_1.png"
-                  alt="Progetto 2 - Vomere"
+                  alt="Omologazione veicoli industriali"
                   loading="lazy"
                 >
               </div>
 
               <div class="project-card__meta">
-                <p class="project-card__label">Project</p>
-                <p class="project-card__name">Vomere</p>
+                <p class="project-card__label">Categoria</p>
+                <p class="project-card__name">Omologazioni veicoli industriali</p>
                 <p class="project-card__category body-text--muted">
-                  Progetto per mantenere coni in lavorazione
+                  Supporto tecnico lungo l'intero iter di omologazione
                 </p>
               </div>
             </article>
+			
+			<!-- CARD PROGETTO 3 -->
+            <article class="project-card">
+              <div class="project-card__media">
+                <img
+                  src="assets/p_3.png"
+                  alt="Prototipazione industriale"
+                  loading="lazy"
+                >
+              </div>
 
-            <!-- CARD PROGETTO 3: con testo descrittivo -->
+              <div class="project-card__meta">
+                <p class="project-card__label">Categoria</p>
+                <p class="project-card__name">Progettazione meccanica</p>
+                <p class="project-card__category body-text--muted">
+                          Il nostro core business è la prototipazione industriale: progettiamo<br>
+							e ingegnerizziamo prototipi funzionali, pronti per la validazione e<br>
+							l’industrializzazione.
+                </p>
+				<a href="lavori.html" class="project-card__link">
+                  Scopri i nostri lavori →
+                </a>
+              </div>
+            </article>
+
+            <!-- CARD PROGETTO 3: con testo descrittivo 
             <article class="project-card project-card--text">
               <div class="project-card__media">
                 <img
                   src="assets/p_3.png"
-                  alt="Progetto 3"
+                  alt="Prototipazione industriale"
                   loading="lazy"
                 >
               </div>
 
               <div class="project-card__content">
                 <p class="body-text">
-                  Ci occupiamo di progettazione di siti web per dare fastidio a
-                  Vincenzo PESCE.
+                  Progettazione di prototipi industriali
                 </p>
                 <a href="#" class="project-card__link">
-                  Ti piace così? →
+                  Guarda i nostri lavori →
                 </a>
               </div>
-            </article>
+            </article>-->
 
           </div>
         </section>
@@ -157,32 +174,35 @@
             <!-- Copy a sinistra -->
             <div class="section--stats__intro">
               <p class="body-text">
-                Evolvente Lab craft<br>
-                visual strategies that<br>
-                elevate your brand.
+			Evolvente Lab affianca aziende e studi tecnici<br>
+			nella progettazione, validazione<br>
+			e industrializzazione dei loro prodotti.
               </p>
             </div>
 
             <!-- Colonna numeri a destra -->
             <div class="stats-grid">
               <div class="stat reveal-right">
-                <p class="stat__value heading heading--lg">1M+</p>
+                <p class="stat__value heading heading--lg">3</p>
                 <p class="stat__label body-text--muted">
-                  Users reached across all client websites
+				Aree di competenza integrate: formazione tecnica,<br>
+				assistenza alle omologazioni e prototipazione industriale.
                 </p>
               </div>
 
               <div class="stat reveal-right">
-                <p class="stat__value heading heading--lg">36</p>
+                <p class="stat__value heading heading--lg">50 +</p>
                 <p class="stat__label body-text--muted">
-                  Active campaigns for multiple companies and brands
+                  Progetti seguiti tra prototipi, allestimenti speciali<br>
+				  e supporto tecnico a imprese e professionisti.
                 </p>
               </div>
 
               <div class="stat reveal-right">
-                <p class="stat__value heading heading--lg">100+</p>
+                <p class="stat__value heading heading--lg">100%</p>
                 <p class="stat__label body-text--muted">
-                  Different clients have sought our expertise
+                  Approccio su misura: ogni intervento è progettato sulle esigenze
+				specifiche dell’azienda, non su soluzioni generiche.
                 </p>
               </div>
             </div>
@@ -197,7 +217,7 @@
         >
           <div class="section__header">
             <h2 id="contact-title" class="heading heading--sm">
-              Connect with us to explore your project's potential.
+              Parliamo del tuo prossimo progetto.
             </h2>
           </div>
 
@@ -223,7 +243,7 @@
 
               <h3 class="contact-heading">Contact</h3>
               <p class="body-text">
-                evolventelab.com<br>
+                www.evolventelab.com<br>
                 info@evolventelab.com
               </p>
             </div>
@@ -245,11 +265,16 @@
       <footer class="site-footer">
         <div class="site-footer__inner">
           <span class="footer-wordmark heading heading--footer">
-            EVOLVENTELAB
+            EVOLVENTE LAB
           </span>
+		  		<div class="divider">
+				</div>
+          <!-- Nuova riga: credit finale -->
+          <p class="site-footer__credit body-text--muted">
+            Fatto con cura e tanto caffè – © 2025
+          </p>
         </div>
       </footer>
-
     </div>
   </body>
 </html>
