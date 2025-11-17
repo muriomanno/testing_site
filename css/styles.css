@@ -302,6 +302,8 @@ a:hover {
 /* Metadati sotto l’immagine */
 .project-card__meta {
     font-size: var(--font-size-sm);
+	margin-left: 1rem;
+	margin-bottom: 1rem;
 }
 
 .project-card__label {
@@ -448,6 +450,11 @@ a:hover {
 .reveal-right.is-visible {
     opacity: 1;
     transform: translateX(0);
+}
+
+.project-card.reveal-right.is-visible:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* ===========================
