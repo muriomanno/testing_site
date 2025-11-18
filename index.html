@@ -26,24 +26,38 @@
 
       <!-- HEADER: logo piccolo + nav -->
       <header class="site-header">
-        <div class="site-header__inner">
-          <!-- Logo -->
-          <a href="#" class="brand">
-            <img
-              src="assets/logo_small_col.svg"
-              alt="Evolvente Lab"
-              class="brand__mark"
-            >
-          </a>
+  <div class="site-header__inner">
+    <!-- Logo -->
+    <a href="index.html" class="brand">
+      <img
+        src="assets/logo_small_col.svg"
+        alt="Evolvente Lab"
+        class="brand__mark"
+      >
+    </a>
 
-          <!-- Nav (About / Contact) -->
-          <nav class="main-nav">
-            <a href="#about" class="main-nav__link">About</a>
-			<a href="lavori.html" class="main-nav__link">Lavori</a>
-            <a href="#contact" class="main-nav__link">Contact</a>
-          </nav>
-        </div>
-      </header>
+    <!-- Bottone hamburger (solo mobile) -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Apri il menu di navigazione"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
+    </button>
+
+    <!-- Nav -->
+    <nav id="main-nav" class="main-nav">
+      <a href="#about" class="main-nav__link">Chi siamo</a>
+      <a href="lavori.html" class="main-nav__link">Lavori</a>
+      <a href="#contact" class="main-nav__link">Contatti</a>
+    </nav>
+  </div>
+</header>
+
 
       <!-- CONTENUTO PRINCIPALE -->
       <main>
@@ -216,7 +230,7 @@
           aria-labelledby="contact-title"
         >
           <div class="section__header">
-            <h2 id="contact-title" class="heading heading--sm">
+            <h2 id="contact-title" class="heading heading--lg">
               Parliamo del tuo prossimo progetto.
             </h2>
           </div>
@@ -241,7 +255,7 @@
                 81050 Portico Di Caserta (CE), Italia
               </p>
 
-              <h3 class="contact-heading">Contact</h3>
+              <h3 class="contact-heading">Contatti</h3>
               <p class="body-text">
 			    <a href="https://evolventelab.com" target="_blank">evolventelab.com</a><br>
 				<a href="mailto:info@evolventelab.com">info@evolventelab.com</a>
