@@ -20,23 +20,36 @@
     <div class="page">
       <!-- HEADER: logo + nav (link verso la home) -->
       <header class="site-header">
-        <div class="site-header__inner">
-          <a href="index.html" class="brand">
-            <img
-              src="assets/logo_small_col.svg"
-              alt="Evolvente Lab"
-              class="brand__mark"
-            >
-          </a>
+  <div class="site-header__inner">
+    <a href="index.html" class="brand">
+      <img
+        src="assets/logo_small_col.svg"
+        alt="Evolvente Lab"
+        class="brand__mark"
+      >
+    </a>
 
-          <nav class="main-nav">
-            <a href="index.html" class="main-nav__link">Home</a>
-            <a href="index.html#about" class="main-nav__link">About</a>
-            <a href="lavori.html" class="main-nav__link">Lavori</a>
-            <a href="index.html#contact" class="main-nav__link">Contact</a>
-          </nav>
-        </div>
-      </header>
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Apri il menu di navigazione"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
+      <span class="nav-toggle__line"></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav">
+      <a href="index.html" class="main-nav__link">Home</a>
+      <a href="index.html#about" class="main-nav__link">Chi siamo</a>
+      <a href="lavori.html" class="main-nav__link">Lavori</a>
+      <a href="index.html#contact" class="main-nav__link">Contatti</a>
+    </nav>
+  </div>
+</header>
+
 
       <main>
         <!-- HERO PAGINA LAVORI -->
