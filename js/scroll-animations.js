@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  // ==========================
+  // MENU MOBILE (hamburger)
+  // ==========================
+  const nav = document.getElementById('main-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+
+  if (nav && navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
   // ==========================
   // 1) REVEAL FROM RIGHT
   // ==========================
@@ -17,6 +31,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   items.forEach(el => observer.observe(el));
+/*
+// ==========================
+// 1) REVEAL FROM RIGHT senza uscita
+// ==========================
+const items = document.querySelectorAll('.reveal-right');
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // mostra l'elemento
+      entry.target.classList.add('is-visible');
+
+      // smetti di osservarlo: niente uscita, niente ri-animazione
+      obs.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.8
+});
+
+items.forEach(el => observer.observe(el));
+*/
 
   // ==========================
   // 2) PARALLAX HERO (solo sfondo)
