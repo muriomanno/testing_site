@@ -7,14 +7,60 @@ document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.querySelector('.nav-toggle');
 
   if (nav && navToggle) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('is-open');
-      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+    // Funzione per chiudere il menu
+    const closeMenu = () => {
+      // 1. Rimuove la classe di apertura dal NAV (nasconde il menu)
+      nav.classList.remove('is-open');
+      // 2. Aggiorna l'attributo per l'accessibilità (attiva la X)
+      navToggle.setAttribute('aria-expanded', 'false');
+      // 3. Sblocca lo scroll del body
+      // Usiamo un breve ritardo per permettere all'animazione di chiusura di finire fluidamente
+      setTimeout(() => {
+        document.body.classList.remove('menu-open');
+      }, 300); // 300ms è la durata della transizione CSS
+    };
+
+    // Funzione per aprire il menu
+    const openMenu = () => {
+      // 1. Blocca subito lo scroll del body
+      document.body.classList.add('menu-open');
+      // 2. Aggiunge la classe di apertura al NAV (mostra il menu)
+      nav.classList.add('is-open');
+      // 3. Aggiorna l'attributo per l'accessibilità (attiva la X)
+      navToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    // Gestore principale: apre/chiude il menu quando si clicca il bottone
+    navToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (nav.classList.contains('is-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // 1. Chiude il menu quando si clicca un link interno
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // 2. CHIUSURA MENU AL CLICK FUORI DALLA NAV E DAL BUTTON
+    document.addEventListener('click', (e) => {
+      const isMenuOpen = nav.classList.contains('is-open');
+
+      // Controlla se il click NON è all'interno della nav E NON è il toggle button
+      const isClickOutside = !nav.contains(e.target) && !navToggle.contains(e.target);
+
+      if (isMenuOpen && isClickOutside) {
+        closeMenu();
+      }
     });
   }
 
   // ==========================
-  // 1) REVEAL FROM RIGHT
+  // 1) REVEAL FROM RIGHT 
   // ==========================
   const items = document.querySelectorAll('.reveal-right');
 
@@ -31,28 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   items.forEach(el => observer.observe(el));
-/*
-// ==========================
-// 1) REVEAL FROM RIGHT senza uscita
-// ==========================
-const items = document.querySelectorAll('.reveal-right');
 
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // mostra l'elemento
-      entry.target.classList.add('is-visible');
-
-      // smetti di osservarlo: niente uscita, niente ri-animazione
-      obs.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.8
-});
-
-items.forEach(el => observer.observe(el));
-*/
 
   // ==========================
   // 2) PARALLAX HERO (solo sfondo)
