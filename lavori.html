@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8">
-    <title>Evolvente Lab – Lavori</title>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Evolvente Lab - Lavori</title>
+
+    <!-- Rende il layout responsive sugli schermi piccoli -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Stili condivisi con la home -->
+    <!-- File di stile esterno -->
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- Favicon -->
@@ -14,227 +16,253 @@
 
     <!-- Animazioni scroll -->
     <script src="js/scroll-animations.js" defer></script>
-  </head>
+</head>
 
-  <body>
-    <div class="page">
-      <!-- HEADER: logo + nav (link verso la home) -->
-      <header class="site-header">
-  <div class="site-header__inner">
-    <a href="index.html" class="brand">
-      <img
-        src="assets/logo_small_col.svg"
-        alt="Evolvente Lab"
-        class="brand__mark"
-      >
-    </a>
+<body>
 
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-label="Apri il menu di navigazione"
-      aria-expanded="false"
-      aria-controls="main-nav"
-    >
-      <span class="nav-toggle__line"></span>
-      <span class="nav-toggle__line"></span>
-      <span class="nav-toggle__line"></span>
-    </button>
+    <!-- HEADER: logo piccolo + nav -->
+    <header class="site-header">
+        <div class="page">
+            <div class="site-header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="brand">
+                    <img src="assets/logo_small_col.svg" alt="Evolvente Lab" class="brand__mark">
+                </a>
 
-    <nav id="main-nav" class="main-nav">
-      <a href="index.html" class="main-nav__link">Home</a>
-      <a href="index.html#about" class="main-nav__link">Chi siamo</a>
-      <a href="lavori.html" class="main-nav__link">Lavori</a>
-      <a href="index.html#contact" class="main-nav__link">Contatti</a>
-    </nav>
-  </div>
-</header>
+                <!-- Bottone hamburger (solo mobile) -->
+                <button class="nav-toggle" type="button" aria-label="Apri il menu di navigazione" aria-expanded="false"
+                    aria-controls="main-nav">
+                    <span class="nav-toggle__line"></span>
+                    <span class="nav-toggle__line"></span>
+                    <span class="nav-toggle__line"></span>
+                </button>
 
-
-      <main>
-        <!-- HERO PAGINA LAVORI -->
-        <section class="hero" aria-labelledby="portfolio-title">
-          <div class="hero__inner">
-            <div class="hero__content">
-              <h2 class="heading heading--xl--sub">
-                Case study. Prototipi. Allestimenti.
-              </h2>
-              <h1 id="portfolio-title" class="heading heading--xl">
-                I nostri lavori
-              </h1>
-              <p class="hero__subtitle body-text">
-                Una selezione di progetti che mostra come Evolvente Lab
-                supporta aziende e studi tecnici dalla prima idea alla
-                validazione sul campo.
-              </p>
+                <!-- Nav -->
+                <nav id="main-nav" class="main-nav">
+                    <a href="index.html" class="main-nav__link">Home</a>
+                    <a href="index.html#about" class="main-nav__link">Chi siamo</a>
+                    <a href="lavori.html" class="main-nav__link">Lavori</a>
+                    <a href="#contact" class="main-nav__link">Contatti</a>
+                </nav>
             </div>
-          </div>
-        </section>
-
-        <!-- Divider sottile sotto la hero -->
-        <hr class="divider-img">
-
-        <!-- SEZIONE PORTFOLIO / CARD DEI LAVORI -->
-        <section class="section section--work" aria-labelledby="projects-title">
-          <div class="section__header">
-            <h2 id="projects-title" class="heading heading--sm">
-              Selezione di progetti
-            </h2>
-            <p class="body-text--muted">
-              Ogni card ospita un’immagine di presentazione del lavoro,
-              un titolo chiaro e una breve descrizione delle attività svolte.
-              Puoi sostituire in qualsiasi momento testi e immagini in base
-              ai progetti che vuoi mostrare.
-            </p>
-          </div>
-
-          <!-- Griglia delle card (riusa la stessa della home) -->
-          <div class="projects-grid">
-
-            <!-- PROGETTO 1 -->
-            <article class="project-card reveal-right">
-              <div class="project-card__media">
-                <img
-                  src="assets/work_01.jpg"
-                  alt="Ufficio mobile omologato"
-                  loading="lazy"
-                >
-              </div>
-              <div class="project-card__meta">
-                <p class="project-card__label">Progetto</p>
-                <p class="project-card__name">Ufficio mobile omologato</p>
-                <p class="project-card__category body-text--muted">
-                  Progettazione e prototipazione di un ufficio mobile con
-                  supporto all’iter di omologazione e definizione degli
-                  allestimenti interni secondo norma.
-                </p>
-              </div>
-            </article>
-
-            <!-- PROGETTO 2 -->
-            <article class="project-card reveal-right">
-              <div class="project-card__media">
-                <img
-                  src="assets/work_02.jpg"
-                  alt="Sistema libreria smart"
-                  loading="lazy"
-                >
-              </div>
-              <div class="project-card__meta">
-                <p class="project-card__label">Progetto</p>
-                <p class="project-card__name">Libreria smart</p>
-                <p class="project-card__category body-text--muted">
-                  Sviluppo di un sistema di libreria smart con sensori integrati,
-                  studio del flusso logico e prototipazione delle componenti
-                  meccaniche ed elettroniche.
-                </p>
-              </div>
-            </article>
-
-            <!-- PROGETTO 3 -->
-            <article class="project-card reveal-right">
-              <div class="project-card__media">
-                <img
-                  src="assets/work_03.jpg"
-                  alt="Macchinario industriale per prodotti da forno"
-                  loading="lazy"
-                >
-              </div>
-              <div class="project-card__meta">
-                <p class="project-card__label">Progetto</p>
-                <p class="project-card__name">
-                  Linea per prodotti da forno
-                </p>
-                <p class="project-card__category body-text--muted">
-                  Studio di fattibilità tecnica e progettazione di un
-                  macchinario per la formatura e il dosaggio di impasti
-                  complessi, con definizione delle stazioni di processo.
-                </p>
-              </div>
-            </article>
-
-            <!-- PROGETTO 4 -->
-            <article class="project-card reveal-right">
-              <div class="project-card__media">
-                <img
-                  src="assets/work_04.jpg"
-                  alt="Veicolo speciale per trasporto a temperatura controllata"
-                  loading="lazy"
-                >
-              </div>
-              <div class="project-card__meta">
-                <p class="project-card__label">Progetto</p>
-                <p class="project-card__name">
-                  Veicolo speciale ATP
-                </p>
-                <p class="project-card__category body-text--muted">
-                  Supporto tecnico alla definizione dell’allestimento e
-                  alla documentazione di omologazione per veicolo con
-                  impianti di refrigerazione dedicati.
-                </p>
-              </div>
-            </article>
-
-            <!-- PROGETTO 5 -->
-            <article class="project-card reveal-right">
-              <div class="project-card__media">
-                <img
-                  src="assets/work_05.jpg"
-                  alt="Sessione di formazione tecnica in azienda"
-                  loading="lazy"
-                >
-              </div>
-              <div class="project-card__meta">
-                <p class="project-card__label">Progetto</p>
-                <p class="project-card__name">
-                  Formazione per uffici tecnici
-                </p>
-                <p class="project-card__category body-text--muted">
-                  Progettazione e somministrazione di corsi dedicati a
-                  uffici tecnici e reparti di progettazione, con moduli
-                  su normazione tecnica, CAD e prototipazione.
-                </p>
-              </div>
-            </article>
-
-            <!-- PROGETTO 6 -->
-            <article class="project-card reveal-right">
-              <div class="project-card__media">
-                <img
-                  src="assets/work_06.jpg"
-                  alt="Banco prova e prototipo funzionale"
-                  loading="lazy"
-                >
-              </div>
-              <div class="project-card__meta">
-                <p class="project-card__label">Progetto</p>
-                <p class="project-card__name">
-                  Banco prova per validazione
-                </p>
-                <p class="project-card__category body-text--muted">
-                  Progettazione di un banco prova per test funzionali su
-                  prototipi meccanici, con definizione delle condizioni di
-                  prova e dei parametri di misura.
-                </p>
-              </div>
-            </article>
-
-          </div>
-        </section>
-      </main>
-
-      <!-- FOOTER uguale alla home -->
-      <footer class="site-footer">
-        <div class="site-footer__inner">
-          <span class="footer-wordmark heading heading--footer">
-            EVOLVENTE LAB
-          </span>
-          <div class="divider"></div>
-          <p class="site-footer__credit body-text--muted">
-            Progettato con cura e tanto caffè – © 2025
-          </p>
         </div>
-      </footer>
-    </div>
-  </body>
+    </header>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <main>
+        <!-- HERO: headline + subheadline -->
+        <section class="hero hero--lavori" aria-labelledby="hero-title">
+            <div class="page">
+                <div class="hero__inner">
+                    <div class="hero__content">
+                        <h2 class="heading heading--xl--sub">
+                            Portfolio
+                        </h2>
+                        <h1 id="hero-title" class="heading heading--xl">
+                            I NOSTRI LAVORI
+                        </h1>
+                        <p class="hero__subtitle body-text">
+                            Una selezione di progetti realizzati per i nostri clienti,<br>
+                            dalla prototipazione all'industrializzazione.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: Projects Grid -->
+        <section id="work" class="section section--work" aria-labelledby="work-title">
+            <div class="page">
+
+                <!-- Griglia dei progetti (3 colonne) -->
+                <div class="projects-grid projects-grid--3-cols">
+
+                    <!-- CARD PROGETTO 1 -->
+                    <div class="card-wrapper reveal-right">
+                        <article class="project-card">
+                            <div class="project-card__media">
+                                <img src="assets/p_1.png" alt="Prototipo meccanico" class="project-card__image">
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__tag">
+                                    Prototipazione
+                                </span>
+                                <h3 class="project-card__title heading heading--sm">
+                                    Prototipo Meccanico
+                                </h3>
+                                <p class="body-text--muted">
+                                    Sviluppo e realizzazione di un prototipo funzionale per test di validazione.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- CARD PROGETTO 2 -->
+                    <div class="card-wrapper reveal-right">
+                        <article class="project-card">
+                            <div class="project-card__media">
+                                <img src="assets/p_2.png" alt="Omologazione veicolo" class="project-card__image">
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__tag">
+                                    Omologazioni
+                                </span>
+                                <h3 class="project-card__title heading heading--sm">
+                                    Omologazione Veicolo Speciale
+                                </h3>
+                                <p class="body-text--muted">
+                                    Supporto tecnico e documentale per l'omologazione di un veicolo industriale.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- CARD PROGETTO 3 -->
+                    <div class="card-wrapper reveal-right">
+                        <article class="project-card">
+                            <div class="project-card__media">
+                                <img src="assets/p_3.png" alt="Formazione tecnica" class="project-card__image">
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__tag">
+                                    Formazione
+                                </span>
+                                <h3 class="project-card__title heading heading--sm">
+                                    Corso CAD Avanzato
+                                </h3>
+                                <p class="body-text--muted">
+                                    Percorso formativo personalizzato per l'ufficio tecnico di un'azienda
+                                    metalmeccanica.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- CARD PROGETTO 4 -->
+                    <div class="card-wrapper reveal-right">
+                        <article class="project-card">
+                            <div class="project-card__media">
+                                <img src="assets/p_1.png" alt="Prototipo meccanico" class="project-card__image">
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__tag">
+                                    Prototipazione
+                                </span>
+                                <h3 class="project-card__title heading heading--sm">
+                                    Prototipo Meccanico
+                                </h3>
+                                <p class="body-text--muted">
+                                    Sviluppo e realizzazione di un prototipo funzionale per test di validazione.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- CARD PROGETTO 5 -->
+                    <div class="card-wrapper reveal-right">
+                        <article class="project-card">
+                            <div class="project-card__media">
+                                <img src="assets/p_2.png" alt="Omologazione veicolo" class="project-card__image">
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__tag">
+                                    Omologazioni
+                                </span>
+                                <h3 class="project-card__title heading heading--sm">
+                                    Omologazione Veicolo Speciale
+                                </h3>
+                                <p class="body-text--muted">
+                                    Supporto tecnico e documentale per l'omologazione di un veicolo industriale.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- CARD PROGETTO 6 -->
+                    <div class="card-wrapper reveal-right">
+                        <article class="project-card">
+                            <div class="project-card__media">
+                                <img src="assets/p_3.png" alt="Formazione tecnica" class="project-card__image">
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__tag">
+                                    Formazione
+                                </span>
+                                <h3 class="project-card__title heading heading--sm">
+                                    Corso CAD Avanzato
+                                </h3>
+                                <p class="body-text--muted">
+                                    Percorso formativo personalizzato per l'ufficio tecnico di un'azienda
+                                    metalmeccanica.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE CTA -->
+        <section class="section section--work" aria-labelledby="cta-title">
+            <div class="page">
+                <div class="section__header">
+                    <h2 id="cta-title" class="heading heading--lg">
+                        Hai un progetto in mente?
+                    </h2>
+                </div>
+                <p class="body-text--muted">
+                    Contattaci per una consulenza gratuita e scopri come possiamo aiutarti.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER UNICO -->
+    <footer id="contact" class="site-footer" aria-labelledby="contact-title">
+        <div class="page">
+            <div class="site-footer__content section-box">
+
+                <div class="contact-grid">
+                    <!-- Logo / simbolo -->
+                    <div class="contact-grid__col contact-grid__col--logo">
+                        <img src="assets/logo_claim_col_w.svg" alt="Evolvente Lab" class="contact-logo">
+                    </div>
+
+                    <!-- Dati ufficio -->
+                    <div class="contact-grid__col">
+                        <h3 class="contact-heading">Sede legale</h3>
+                        <p class="body-text">
+                            Via Rovereto, 5<br>
+                            81050, Portico Di Caserta (CE), Italia
+                        </p>
+
+                        <h3 class="contact-heading">Contatti</h3>
+                        <p class="body-text">
+                            <a href="https://evolventelab.com" target="_blank">evolventelab.com</a><br>
+                            <a href="mailto:info@evolventelab.com">info@evolventelab.com</a>
+                        </p>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="contact-grid__col">
+                        <h3 class="contact-heading">Social</h3>
+                        <ul class="social-list">
+                            <li>
+                                <a href="https://www.instagram.com/evolventelab" class="social-list__link"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="site-footer__credit body-text--muted">
+                Fatto con cura e tanto caffè – © 2025
+            </p>
+        </div>
+    </footer>
+</body>
+
 </html>
