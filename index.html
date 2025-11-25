@@ -18,74 +18,94 @@
   </head>
 
   <body>
-    <!--
-      Wrapper generale della pagina.
-      Serve soprattutto per dare un max-width centrato (gestito via CSS).
-    -->
-    <div class="page">
 
-      <!-- HEADER: logo piccolo + nav -->
-      <header class="site-header">
-  <div class="site-header__inner">
-    <!-- Logo -->
-    <a href="index.html" class="brand">
-      <img
-        src="assets/logo_small_col.svg"
-        alt="Evolvente Lab"
-        class="brand__mark"
-      >
-    </a>
+    <!-- HEADER: logo piccolo + nav -->
+    <header class="site-header">
+      <div class="page">
+        <div class="site-header__inner">
+          <!-- Logo -->
+          <a href="index.html" class="brand">
+            <img
+              src="assets/logo_small_col.svg"
+              alt="Evolvente Lab"
+              class="brand__mark"
+            >
+          </a>
 
-    <!-- Bottone hamburger (solo mobile) -->
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-label="Apri il menu di navigazione"
-      aria-expanded="false"
-      aria-controls="main-nav"
-    >
-      <span class="nav-toggle__line"></span>
-      <span class="nav-toggle__line"></span>
-      <span class="nav-toggle__line"></span>
-    </button>
+          <!-- Bottone hamburger (solo mobile) -->
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+            aria-controls="main-nav"
+          >
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+          </button>
 
-    <!-- Nav -->
-    <nav id="main-nav" class="main-nav">
-      <a href="#about" class="main-nav__link">Chi siamo</a>
-      <a href="lavori.html" class="main-nav__link">Lavori</a>
-      <a href="#contact" class="main-nav__link">Contatti</a>
-    </nav>
-  </div>
-</header>
+          <!-- Nav -->
+          <nav id="main-nav" class="main-nav">
+            <a href="#about" class="main-nav__link">Chi siamo</a>
+            <a href="lavori.html" class="main-nav__link">Lavori</a>
+            <a href="#contact" class="main-nav__link">Contatti</a>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-
-      <!-- CONTENUTO PRINCIPALE -->
-      <main>
-        <!-- HERO: headline + subheadline -->
-        <section class="hero" aria-labelledby="hero-title">
+    <!-- CONTENUTO PRINCIPALE -->
+    <main>
+      <!-- HERO: headline + subheadline -->
+      <section class="hero hero--home" aria-labelledby="hero-title">
+        <div class="page">
           <div class="hero__inner">
             <div class="hero__content">
               <h2 class="heading heading--xl--sub">
                 Design. Build. Repeat.
               </h2>
               <h1 id="hero-title" class="heading heading--xl">
-                Evolvente Lab
+                EVOLVENTE LAB
               </h1>
               <p class="hero__subtitle body-text">
-                  Soluzioni di ingegneria, prototipazione e consulenza<br>
-					per trasformare le tue idee in prodotti reali.
-              </p> 
+                Soluzioni di ingegneria, prototipazione e consulenza<br>
+                per trasformare le tue idee in prodotti reali.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Divider orizzontale sottile -->
-        <hr class="divider-img">
+      <!-- SEZIONE: Chi siamo -->
+      <section id="about" class="section section--about" aria-labelledby="about-title">
+        <div class="page">
+          <div class="section-box reveal-right">
+            <header class="section__header">
+              <h2 id="about-title" class="heading heading--lg">
+                Chi siamo
+              </h2>
+            </header>
+            <div class="section__body">
+              <p class="body-text"style="margin-bottom: 20px;">
+				Siamo tre giovani Ingegneri e Dottori di Ricerca in Ingegneria Industriale, mossi da una profonda passione per l'innovazione e la progettazione meccanica. La nostra società è nata per applicare anni di ricerca accademica e competenza sul campo alla progettazione meccanica di prototipi industriali.
+				</p>
+				<p class="body-text"style="margin-bottom: 20px;">
+				Forniamo un approccio che combina le competenze nelle lavorazioni metalliche classiche (taglio, piega, ecc.) con l'uso avanzato di tecnologie innovative. Siamo specializzati nella prototipazione avanzata, includendo l'utilizzo della manifattura additiva e del reverse engineering tramite scanner laser 3D.
+				</p>
+				<p class="body-text"style="margin-bottom: 20px;">
+				Il nostro servizio si estende anche al supporto normativo e di sicurezza: assistiamo le aziende nella messa in sicurezza dei macchinari industriali (81/08) e offriamo consulenza completa per l'omologazione di veicoli industriali, redigendo le relazioni tecniche necessarie per allestimenti speciali, cassoni e regimi specifici come ATP e ADR. Completiamo il nostro supporto con corsi aziendali specialistici e servizi di brand identity per il prodotto.
+				</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- SEZIONE: Our work / servizi -->
-        <section id="work" class="section section--work" aria-labelledby="work-title">
+      <!-- SEZIONE: Our work / servizi -->
+      <section id="work" class="section section--work" aria-labelledby="work-title">
+        <div class="page">
           <div class="section__header">
-            <h2 id="work-title" class="heading heading--sm">
+            <h2 id="work-title" class="heading heading--lg">
               I nostri servizi
             </h2>
           </div>
@@ -97,17 +117,21 @@
             <article class="project-card">
               <div class="project-card__media">
                 <img
-                  src="assets/p_1.png"
-                  alt="Corsi di formazione"
-                  loading="lazy"
+                  src="assets/prototipo.svg"
+                  alt="Prototipazione meccanica e industriale"
+                  class="project-card__image"
                 >
               </div>
-
-              <div class="project-card__meta">
-                <p class="project-card__label">Categoria</p>
-                <p class="project-card__name">Corsi di formazione</p>
-                <p class="project-card__category body-text--muted">
-                  Corsi di formazione tecnica alle aziende
+              <div class="project-card__content">
+                <span class="project-card__tag">
+                  Prototipazione industriale
+                </span>
+                <h3 class="project-card__title heading heading--sm">
+                  Dall’idea al prototipo funzionante
+                </h3>
+                <p class="body-text--muted">
+                  Supporto completo, dal concept al prototipo fisico, con modellazione 3D,
+                  scelta dei materiali e coordinamento con i fornitori.
                 </p>
               </div>
             </article>
@@ -116,132 +140,149 @@
             <article class="project-card">
               <div class="project-card__media">
                 <img
-                  src="assets/p_1.png"
-                  alt="Omologazione veicoli industriali"
-                  loading="lazy"
+                  src="assets/veicolo.svg"
+                  alt="Supporto tecnico per omologazioni e allestimenti"
+                  class="project-card__image"
                 >
               </div>
-
-              <div class="project-card__meta">
-                <p class="project-card__label">Categoria</p>
-                <p class="project-card__name">Omologazioni veicoli industriali</p>
-                <p class="project-card__category body-text--muted">
-                  Supporto tecnico lungo l'intero iter di omologazione
+              <div class="project-card__content">
+                <span class="project-card__tag">
+                  Omologazioni veicoli
+                </span>
+                <h3 class="project-card__title heading heading--sm">
+                  Assistenza alle omologazioni e agli allestimenti
+                </h3>
+                <p class="body-text--muted">
+                  Analisi normativa, relazioni tecniche, disegni e documentazione
+                  per allestimenti speciali e adeguamenti a norme UNI/EN
+                  e regolamenti europei.
                 </p>
               </div>
             </article>
-			
-			<!-- CARD PROGETTO 3 -->
+
+            <!-- CARD PROGETTO 3 -->
             <article class="project-card">
               <div class="project-card__media">
                 <img
-                  src="assets/p_3.png"
-                  alt="Prototipazione industriale"
-                  loading="lazy"
+                  src="assets/lezione.svg"
+                  alt="Formazione tecnica a supporto di studi e uffici tecnici"
+                  class="project-card__image"
                 >
               </div>
-
-              <div class="project-card__meta">
-                <p class="project-card__label">Categoria</p>
-                <p class="project-card__name">Progettazione meccanica</p>
-                <p class="project-card__category body-text--muted">
-                          Il nostro core business è la prototipazione industriale: progettiamo<br>
-							e ingegnerizziamo prototipi funzionali, pronti per la validazione e<br>
-							l’industrializzazione.
+              <div class="project-card__content">
+                <span class="project-card__tag">
+                  Formazione tecnica
+                </span>
+                <h3 class="project-card__title heading heading--sm">
+                  Corsi e percorsi formativi su misura
+                </h3>
+                <p class="body-text--muted">
+                  Formazione tecnica su progettazione meccanica, FEM, automazione
+                  e strumenti digitali, pensata per studi tecnici e aziende.
                 </p>
-				<a href="lavori.html" class="project-card__link">
-                  Scopri i nostri lavori →
-                </a>
               </div>
             </article>
 
-            <!-- CARD PROGETTO 3: con testo descrittivo 
-            <article class="project-card project-card--text">
+            <!-- CARD PROGETTO 4 -->
+            <article class="project-card">
               <div class="project-card__media">
                 <img
-                  src="assets/p_3.png"
-                  alt="Prototipazione industriale"
-                  loading="lazy"
+                  src="assets/brand.svg"
+                  alt="Supporto a studi tecnici e aziende per lo sviluppo di prodotti"
+                  class="project-card__image"
                 >
               </div>
-
               <div class="project-card__content">
-                <p class="body-text">
-                  Progettazione di prototipi industriali
+                <span class="project-card__tag">
+                  Supporto a studi e imprese
+                </span>
+                <h3 class="project-card__title heading heading--sm">
+                  Un partner tecnico per i tuoi progetti
+                </h3>
+                <p class="body-text--muted">
+                  Collaboriamo con uffici tecnici, studi di progettazione e PMI
+                  per integrare competenze di analisi, progettazione e
+                  prototipazione.
                 </p>
-                <a href="#" class="project-card__link">
-                  Guarda i nostri lavori →
-                </a>
               </div>
-            </article>-->
+            </article>
 
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- SEZIONE: Stats -->
-        <section
-          id="about"
-          class="section section--stats"
-          aria-label="Studio metrics"
-        >
-          <div class="section__inner section--stats__inner">
+      <!-- SEZIONE: Stats -->
+      <section
+        id="stats"
+        class="section section--stats"
+        aria-label="Studio metrics"
+      >
+        <div class="page">
+          <div class="section--stats__inner">
             <!-- Copy a sinistra -->
             <div class="section--stats__intro">
               <p class="body-text">
-			Evolvente Lab affianca aziende e studi tecnici<br>
-			nella progettazione, validazione<br>
-			e industrializzazione dei loro prodotti.
+                Evolvente Lab affianca aziende e studi tecnici<br>
+                nella progettazione, validazione<br>
+                e industrializzazione dei loro prodotti.
               </p>
             </div>
 
             <!-- Colonna numeri a destra -->
             <div class="stats-grid">
               <div class="stat reveal-right">
-                <p class="stat__value heading heading--lg">3</p>
+                <p class="stat__value heading heading--lg--green">3</p>
                 <p class="stat__label body-text--muted">
-				Aree di competenza integrate: formazione tecnica,<br>
-				assistenza alle omologazioni e prototipazione industriale.
+                  Aree di competenza integrate: formazione tecnica,<br>
+                  assistenza alle omologazioni e prototipazione industriale.
                 </p>
               </div>
 
               <div class="stat reveal-right">
-                <p class="stat__value heading heading--lg">50 +</p>
+                <p class="stat__value heading heading--lg--green">50 +</p>
                 <p class="stat__label body-text--muted">
                   Progetti seguiti tra prototipi, allestimenti speciali<br>
-				  e supporto tecnico a imprese e professionisti.
+                  e supporto tecnico a imprese e professionisti.
                 </p>
               </div>
 
               <div class="stat reveal-right">
-                <p class="stat__value heading heading--lg">100%</p>
+                <p class="stat__value heading heading--lg--green">100%</p>
                 <p class="stat__label body-text--muted">
                   Approccio su misura: ogni intervento è progettato sulle esigenze
-				specifiche dell’azienda, non su soluzioni generiche.
+                  specifiche dell’azienda, non su soluzioni generiche.
                 </p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
+    </main>
 
-        <!-- SEZIONE: Contact / footer alto -->
-        <section
-          id="contact"
-          class="section section--contact"
-          aria-labelledby="contact-title"
-        >
-          <div class="section__header">
-            <h2 id="contact-title" class="heading heading--lg">
-              Parliamo del tuo prossimo progetto.
-            </h2>
-          </div>
+    <!-- SEZIONE CTA -->
+    <section class="section section--work" aria-labelledby="cta-title">
+      <div class="page">
+        <div class="section__header">
+          <h2 id="cta-title" class="heading heading--lg">
+            Parlaci del tuo prossimo progetto.
+          </h2>
+        </div>
+        <p class="body-text--muted">
+          Raccontaci di cosa hai bisogno: ti aiuteremo a trasformare la tua idea in un progetto concreto.
+        </p>
+      </div>
+    </section>
 
-          <hr class="divider">
+    <!-- FOOTER UNICO -->
+    <footer id="contact" class="site-footer" aria-labelledby="contact-title">
+      <div class="page">
+        <div class="site-footer__content section-box">
 
           <div class="contact-grid">
             <!-- Logo / simbolo -->
             <div class="contact-grid__col contact-grid__col--logo">
               <img
-                src="assets/logo_claim_col.svg"
+                src="assets/logo_claim_col_w.svg"
                 alt="Evolvente Lab"
                 class="contact-logo"
               >
@@ -252,13 +293,13 @@
               <h3 class="contact-heading">Sede legale</h3>
               <p class="body-text">
                 Via Rovereto, 5<br>
-                81050 Portico Di Caserta (CE), Italia
+                81050, Portico Di Caserta (CE), Italia
               </p>
 
               <h3 class="contact-heading">Contatti</h3>
               <p class="body-text">
-			    <a href="https://evolventelab.com" target="_blank">evolventelab.com</a><br>
-				<a href="mailto:info@evolventelab.com">info@evolventelab.com</a>
+                <a href="https://evolventelab.com" target="_blank">evolventelab.com</a><br>
+                <a href="mailto:info@evolventelab.com">info@evolventelab.com</a>
               </p>
             </div>
 
@@ -267,35 +308,23 @@
               <h3 class="contact-heading">Social</h3>
               <ul class="social-list">
                 <li>
-                    <a
-						href="https://www.instagram.com/evolventelab"
-						class="social-list__link"
-						target="_blank"
-						rel="noopener noreferrer">
-					
-							Instagram
-					</a>
+                  <a
+                    href="https://www.instagram.com/evolventelab"
+                    class="social-list__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
-        </section>
-      </main>
-
-      <!-- FOOTER: logotipo grande in fondo pagina -->
-      <footer class="site-footer">
-        <div class="site-footer__inner">
-          <span class="footer-wordmark heading heading--footer">
-            EVOLVENTE LAB
-          </span>
-		  		<div class="divider">
-				</div>
-          <!-- Nuova riga: credit finale -->
-          <p class="site-footer__credit body-text--muted">
-            Fatto con cura e tanto caffè – © 2025
-          </p>
         </div>
-      </footer>
-    </div>
-  </body>
+		<p class="site-footer__credit body-text--muted">
+          Fatto con cura e tanto caffè – © 2025
+        </p>
+      </div>
+    </footer>
+    </body>
 </html>
